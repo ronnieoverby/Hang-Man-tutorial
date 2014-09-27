@@ -29,11 +29,11 @@ namespace HangmanGame
         private void InitializeComponent()
         {
             this.getNewWord = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtWordBox = new System.Windows.Forms.TextBox();
             this.letterA = new System.Windows.Forms.Button();
             this.letterT = new System.Windows.Forms.Button();
             this.letterC = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtGuessesLeft = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.letterV = new System.Windows.Forms.Button();
             this.letterY = new System.Windows.Forms.Button();
@@ -77,15 +77,15 @@ namespace HangmanGame
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(81, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(250, 29);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TabStop = false;
-            this.textBox2.Text = "***";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtWordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWordBox.Location = new System.Drawing.Point(81, 68);
+            this.txtWordBox.Name = "textBox2";
+            this.txtWordBox.ReadOnly = true;
+            this.txtWordBox.Size = new System.Drawing.Size(250, 29);
+            this.txtWordBox.TabIndex = 3;
+            this.txtWordBox.TabStop = false;
+            this.txtWordBox.Text = "***";
+            this.txtWordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // letterA
             // 
@@ -96,7 +96,7 @@ namespace HangmanGame
             this.letterA.TabStop = false;
             this.letterA.Text = "A";
             this.letterA.UseVisualStyleBackColor = true;
-            this.letterA.Click += new System.EventHandler(this.letterA_Click);
+            this.letterA.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterT
             // 
@@ -107,7 +107,7 @@ namespace HangmanGame
             this.letterT.TabStop = false;
             this.letterT.Text = "T";
             this.letterT.UseVisualStyleBackColor = true;
-            this.letterT.Click += new System.EventHandler(this.letterA_Click);
+            this.letterT.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterC
             // 
@@ -118,17 +118,17 @@ namespace HangmanGame
             this.letterC.TabStop = false;
             this.letterC.Text = "C";
             this.letterC.UseVisualStyleBackColor = true;
-            this.letterC.Click += new System.EventHandler(this.letterA_Click);
+            this.letterC.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 302);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(43, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TabStop = false;
-            this.textBox3.Text = "0";
+            this.txtGuessesLeft.Location = new System.Drawing.Point(185, 302);
+            this.txtGuessesLeft.Name = "textBox3";
+            this.txtGuessesLeft.ReadOnly = true;
+            this.txtGuessesLeft.Size = new System.Drawing.Size(43, 20);
+            this.txtGuessesLeft.TabIndex = 7;
+            this.txtGuessesLeft.TabStop = false;
+            this.txtGuessesLeft.Text = "0";
             // 
             // label1
             // 
@@ -148,7 +148,7 @@ namespace HangmanGame
             this.letterV.TabStop = false;
             this.letterV.Text = "V";
             this.letterV.UseVisualStyleBackColor = true;
-            this.letterV.Click += new System.EventHandler(this.letterA_Click);
+            this.letterV.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterY
             // 
@@ -159,7 +159,7 @@ namespace HangmanGame
             this.letterY.TabStop = false;
             this.letterY.Text = "Y";
             this.letterY.UseVisualStyleBackColor = true;
-            this.letterY.Click += new System.EventHandler(this.letterA_Click);
+            this.letterY.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterZ
             // 
@@ -170,7 +170,7 @@ namespace HangmanGame
             this.letterZ.TabStop = false;
             this.letterZ.Text = "Z";
             this.letterZ.UseVisualStyleBackColor = true;
-            this.letterZ.Click += new System.EventHandler(this.letterA_Click);
+            this.letterZ.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterB
             // 
@@ -181,7 +181,7 @@ namespace HangmanGame
             this.letterB.TabStop = false;
             this.letterB.Text = "B";
             this.letterB.UseVisualStyleBackColor = true;
-            this.letterB.Click += new System.EventHandler(this.letterA_Click);
+            this.letterB.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterD
             // 
@@ -192,7 +192,7 @@ namespace HangmanGame
             this.letterD.TabStop = false;
             this.letterD.Text = "D";
             this.letterD.UseVisualStyleBackColor = true;
-            this.letterD.Click += new System.EventHandler(this.letterA_Click);
+            this.letterD.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterE
             // 
@@ -203,7 +203,7 @@ namespace HangmanGame
             this.letterE.TabStop = false;
             this.letterE.Text = "E";
             this.letterE.UseVisualStyleBackColor = true;
-            this.letterE.Click += new System.EventHandler(this.letterA_Click);
+            this.letterE.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterF
             // 
@@ -214,7 +214,7 @@ namespace HangmanGame
             this.letterF.TabStop = false;
             this.letterF.Text = "F";
             this.letterF.UseVisualStyleBackColor = true;
-            this.letterF.Click += new System.EventHandler(this.letterA_Click);
+            this.letterF.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterG
             // 
@@ -225,7 +225,7 @@ namespace HangmanGame
             this.letterG.TabStop = false;
             this.letterG.Text = "G";
             this.letterG.UseVisualStyleBackColor = true;
-            this.letterG.Click += new System.EventHandler(this.letterA_Click);
+            this.letterG.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterH
             // 
@@ -236,7 +236,7 @@ namespace HangmanGame
             this.letterH.TabStop = false;
             this.letterH.Text = "H";
             this.letterH.UseVisualStyleBackColor = true;
-            this.letterH.Click += new System.EventHandler(this.letterA_Click);
+            this.letterH.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterI
             // 
@@ -247,7 +247,7 @@ namespace HangmanGame
             this.letterI.TabStop = false;
             this.letterI.Text = "I";
             this.letterI.UseVisualStyleBackColor = true;
-            this.letterI.Click += new System.EventHandler(this.letterA_Click);
+            this.letterI.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterJ
             // 
@@ -258,7 +258,7 @@ namespace HangmanGame
             this.letterJ.TabStop = false;
             this.letterJ.Text = "J";
             this.letterJ.UseVisualStyleBackColor = true;
-            this.letterJ.Click += new System.EventHandler(this.letterA_Click);
+            this.letterJ.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterK
             // 
@@ -269,7 +269,7 @@ namespace HangmanGame
             this.letterK.TabStop = false;
             this.letterK.Text = "K";
             this.letterK.UseVisualStyleBackColor = true;
-            this.letterK.Click += new System.EventHandler(this.letterA_Click);
+            this.letterK.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterL
             // 
@@ -280,7 +280,7 @@ namespace HangmanGame
             this.letterL.TabStop = false;
             this.letterL.Text = "L";
             this.letterL.UseVisualStyleBackColor = true;
-            this.letterL.Click += new System.EventHandler(this.letterA_Click);
+            this.letterL.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterM
             // 
@@ -291,7 +291,7 @@ namespace HangmanGame
             this.letterM.TabStop = false;
             this.letterM.Text = "M";
             this.letterM.UseVisualStyleBackColor = true;
-            this.letterM.Click += new System.EventHandler(this.letterA_Click);
+            this.letterM.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterN
             // 
@@ -302,7 +302,7 @@ namespace HangmanGame
             this.letterN.TabStop = false;
             this.letterN.Text = "N";
             this.letterN.UseVisualStyleBackColor = true;
-            this.letterN.Click += new System.EventHandler(this.letterA_Click);
+            this.letterN.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterO
             // 
@@ -313,7 +313,7 @@ namespace HangmanGame
             this.letterO.TabStop = false;
             this.letterO.Text = "O";
             this.letterO.UseVisualStyleBackColor = true;
-            this.letterO.Click += new System.EventHandler(this.letterA_Click);
+            this.letterO.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterP
             // 
@@ -324,7 +324,7 @@ namespace HangmanGame
             this.letterP.TabStop = false;
             this.letterP.Text = "P";
             this.letterP.UseVisualStyleBackColor = true;
-            this.letterP.Click += new System.EventHandler(this.letterA_Click);
+            this.letterP.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterQ
             // 
@@ -335,7 +335,7 @@ namespace HangmanGame
             this.letterQ.TabStop = false;
             this.letterQ.Text = "Q";
             this.letterQ.UseVisualStyleBackColor = true;
-            this.letterQ.Click += new System.EventHandler(this.letterA_Click);
+            this.letterQ.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterR
             // 
@@ -346,7 +346,7 @@ namespace HangmanGame
             this.letterR.TabStop = false;
             this.letterR.Text = "R";
             this.letterR.UseVisualStyleBackColor = true;
-            this.letterR.Click += new System.EventHandler(this.letterA_Click);
+            this.letterR.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterS
             // 
@@ -357,7 +357,7 @@ namespace HangmanGame
             this.letterS.TabStop = false;
             this.letterS.Text = "S";
             this.letterS.UseVisualStyleBackColor = true;
-            this.letterS.Click += new System.EventHandler(this.letterA_Click);
+            this.letterS.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterU
             // 
@@ -368,7 +368,7 @@ namespace HangmanGame
             this.letterU.TabStop = false;
             this.letterU.Text = "U";
             this.letterU.UseVisualStyleBackColor = true;
-            this.letterU.Click += new System.EventHandler(this.letterA_Click);
+            this.letterU.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterX
             // 
@@ -379,7 +379,7 @@ namespace HangmanGame
             this.letterX.TabStop = false;
             this.letterX.Text = "X";
             this.letterX.UseVisualStyleBackColor = true;
-            this.letterX.Click += new System.EventHandler(this.letterA_Click);
+            this.letterX.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // letterW
             // 
@@ -390,7 +390,7 @@ namespace HangmanGame
             this.letterW.TabStop = false;
             this.letterW.Text = "W";
             this.letterW.UseVisualStyleBackColor = true;
-            this.letterW.Click += new System.EventHandler(this.letterA_Click);
+            this.letterW.Click += new System.EventHandler(this.LetterButtonClick);
             // 
             // txtWins
             // 
@@ -463,11 +463,11 @@ namespace HangmanGame
             this.Controls.Add(this.letterY);
             this.Controls.Add(this.letterV);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtGuessesLeft);
             this.Controls.Add(this.letterC);
             this.Controls.Add(this.letterT);
             this.Controls.Add(this.letterA);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtWordBox);
             this.Controls.Add(this.getNewWord);
             this.Name = "Form1";
             this.Text = "Hangman";
@@ -480,11 +480,11 @@ namespace HangmanGame
         #endregion
 
         private System.Windows.Forms.Button getNewWord;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtWordBox;
         private System.Windows.Forms.Button letterA;
         private System.Windows.Forms.Button letterT;
         private System.Windows.Forms.Button letterC;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtGuessesLeft;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button letterV;
         private System.Windows.Forms.Button letterY;
